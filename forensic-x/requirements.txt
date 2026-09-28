@@ -1,0 +1,82 @@
+# ============================================================
+# FORENSIC-X — Digital Forensics & Incident Response Platform
+# requirements.txt
+# ============================================================
+
+# ── Web Framework ────────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# ── Database ─────────────────────────────────────────────────
+sqlalchemy==2.0.36
+alembic==1.14.0
+psycopg2-binary==2.9.10
+asyncpg==0.30.0
+
+# ── Data Validation & Serialization ──────────────────────────
+pydantic[email]==2.10.3
+pydantic-settings==2.6.1
+python-multipart==0.0.12
+
+# ── Authentication & Security ─────────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[argon2]==1.7.4
+argon2-cffi==23.1.0
+cryptography==44.0.0
+pyotp==2.9.0               # TOTP-based MFA
+qrcode[pil]==8.0           # QR code for MFA setup
+
+# ── Rate Limiting ─────────────────────────────────────────────
+slowapi==0.1.9
+limits==3.14.0
+
+# ── Redis (session store / rate limiting / caching) ───────────
+redis==5.2.1
+hiredis==3.1.0
+
+# ── File Analysis & Hashing ───────────────────────────────────
+python-magic==0.4.27       # MIME-type detection
+Pillow==11.0.0             # Image metadata
+python-dateutil==2.9.0
+
+# ── Report Generation ─────────────────────────────────────────
+reportlab==4.2.5           # PDF generation
+jinja2==3.1.4              # HTML templates / reports
+weasyprint==63.1           # HTML→PDF alternative
+openpyxl==3.1.5            # Excel export
+
+# ── Log Parsing ───────────────────────────────────────────────
+python-evtx==0.7.4         # Windows EVTX log parsing
+lxml==5.3.0                # XML processing
+
+# ── PCAP Analysis (optional advanced feature) ─────────────────
+dpkt==1.9.8
+
+# ── HTTP Client (threat intel enrichment) ─────────────────────
+httpx==0.28.1
+aiohttp==3.11.11
+
+# ── Utilities ─────────────────────────────────────────────────
+python-dotenv==1.0.1
+structlog==24.4.0          # Structured logging
+rich==13.9.4               # Pretty CLI output
+click==8.1.8               # CLI scripts
+croniter==6.0.0            # Cron expressions for scheduler
+apscheduler==3.11.0        # Background task scheduling
+anyio==4.7.0
+
+# ── CORS, Security Headers ────────────────────────────────────
+starlette==0.41.3
+
+# ── Testing ───────────────────────────────────────────────────
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-cov==6.0.0
+httpx==0.28.1              # Async test client
+faker==33.1.0              # Synthetic test data
+
+# ── Development ───────────────────────────────────────────────
+black==24.10.0
+isort==5.13.2
+flake8==7.1.1
+mypy==1.13.0
